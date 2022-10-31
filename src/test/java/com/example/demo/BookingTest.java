@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Profile;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootApplication
+@Profile("test")
 class BookingTest {
 
 }

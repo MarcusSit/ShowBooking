@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 @Data
 @Entity
 @Table(name = "ShowSetup")
-public class ShowSetupModel {
+public class ShowSetup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookingId;

@@ -1,6 +1,6 @@
 package com.example.demo.Repository;
 
-import com.example.demo.Model.ShowSetupModel;
+import com.example.demo.Model.ShowSetup;
 import org.junit.jupiter.api.Test;
 
 
@@ -11,19 +11,19 @@ import java.util.List;
 class ShowRepositoryTest {
 
 
-    private ShowSetupModel showSetupModel = new ShowSetupModel();
+    private ShowSetup showSetup = new ShowSetup();
 
-    private List<ShowSetupModel> showSetupModelList = new ArrayList<>();
+    private List<ShowSetup> showSetupList = new ArrayList<>();
 
     @Test
     void shouldSaveAll() {
-        showSetupModel.setShowNumber(2L);
-        showSetupModel.setAvailability("Available");
-        showSetupModel.setCancellationWindow(3L);
-        showSetupModel.setBookingId(null);
-        showSetupModel.setSeatNumber("H3");
+        showSetup.setShowNumber(2L);
+        showSetup.setAvailability("Available");
+        showSetup.setCancellationWindow(3L);
+        showSetup.setBookingId(null);
+        showSetup.setSeatNumber("H3");
 
-        showSetupModelList.add(showSetupModel);
+        showSetupList.add(showSetup);
     }
 
 }

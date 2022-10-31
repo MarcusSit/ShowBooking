@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.Controller.ShowBookingController;
+import com.example.demo.Controller.ShowController;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -20,8 +20,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = {"com.example.demo.Repository"})
 @Profile("!test")
 public class Booking implements CommandLineRunner {
+
 	@Autowired
-	private ShowBookingController showBookingController;
+	private ShowController showController;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Booking.class, args);
@@ -29,6 +30,8 @@ public class Booking implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-	showBookingController.flow();
+		showController.initialInput();
 	}
+
 }
+
