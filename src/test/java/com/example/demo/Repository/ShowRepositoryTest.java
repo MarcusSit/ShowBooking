@@ -1,29 +1,31 @@
 package com.example.demo.Repository;
 
-import com.example.demo.Model.ShowSetup;
+import com.example.demo.Controller.ShowController;
+import com.example.demo.Model.ShowSetupTest;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
-
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(properties = {
+        "command.line.runner.enabled=false"})
 class ShowRepositoryTest {
+    @Autowired
+    ShowRepository showRepository;
 
-
-    private ShowSetup showSetup = new ShowSetup();
-
-    private List<ShowSetup> showSetupList = new ArrayList<>();
+    private ShowSetupTest showSetupTest = new ShowSetupTest();
 
     @Test
     void shouldSaveAll() {
-        showSetup.setShowNumber(2L);
-        showSetup.setAvailability("Available");
-        showSetup.setCancellationWindow(3L);
-        showSetup.setBookingId(null);
-        showSetup.setSeatNumber("H3");
+        var createList = showSetupTest.getShowSetupListTestDataForSetup();
+        var actual = showRepository.saveAll(createList);
 
-        showSetupList.add(showSetup);
+        assertThat(actual.size()).isEqualTo(10);
     }
 
 }
