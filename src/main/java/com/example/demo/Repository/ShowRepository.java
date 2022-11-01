@@ -19,5 +19,5 @@ public interface ShowRepository extends JpaRepository<ShowSetup,Integer> {
 
     @Modifying
     @Query(value = "UPDATE SHOW_SETUP SET PHONE_NUMBER = ?1,BOOKING_TIME = ?2,AVAILABILITY =?3 WHERE SEAT_NUMBER =?4 AND SHOW_NUMBER =?5", nativeQuery = true)
-    void updateBooking(String phoneNumber,Timestamp timestamp,String availability,String seatNumber, String showNumber);
+    void updateBooking(String phoneNumber,Timestamp timestamp,String availability,String seatNumber, long showNumber);
 }

@@ -64,7 +64,7 @@ public class BuyerServiceImpl implements BuyerService {
                         throw new SeatAlreadyBookedException(String.valueOf(showNumber));
                     }
                     showRepository.updateBooking(phoneNumber,Timestamp.valueOf(LocalDateTime.now()),
-                            "Booked", seatNumber,String.valueOf(showNumber));
+                            "Booked", seatNumber,showNumber);
                     DisplayBookedTicketModel displayBookedTicketModel = new DisplayBookedTicketModel();
                     displayBookedTicketModel.setBookingId(showSetup.getBookingId());
                     displayBookedTicketModel.setShowNumber(showNumber);
@@ -89,7 +89,7 @@ public class BuyerServiceImpl implements BuyerService {
             throw new CancellationWindowExpiredException(String.valueOf(ticketNumber));
         }
         showRepository.updateBooking(phoneNumber,null,"Available",
-                foundToBeCancelledTicket.getSeatNumber(),foundToBeCancelledTicket.getShowNumber().toString());
+                foundToBeCancelledTicket.getSeatNumber(),foundToBeCancelledTicket.getShowNumber());
         return String.valueOf(ticketNumber);
     }
 }
