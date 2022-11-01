@@ -1,6 +1,5 @@
 package com.example.demo.Service.Impl;
 
-import com.example.demo.Booking;
 import com.example.demo.Exception.ShowDoesNotExistException;
 import com.example.demo.Model.ShowSetup;
 import com.example.demo.Repository.ShowRepository;
@@ -8,12 +7,9 @@ import com.example.demo.Service.AdminService;
 import com.example.demo.Utils.BookingUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
 

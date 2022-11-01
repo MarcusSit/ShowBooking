@@ -2,7 +2,6 @@ package com.example.demo.Service;
 
 import com.example.demo.Exception.*;
 import com.example.demo.Model.DisplayBookedTicketModel;
-import com.example.demo.Model.ShowSetup;
 
 import java.util.List;
 

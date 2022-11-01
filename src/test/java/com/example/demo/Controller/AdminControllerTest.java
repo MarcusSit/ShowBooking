@@ -2,7 +2,6 @@ package com.example.demo.Controller;
 
 import com.example.demo.Exception.*;
 import com.example.demo.Service.Impl.AdminServiceImpl;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -13,8 +12,6 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Scanner;
-
-import static org.junit.jupiter.api.Assertions.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 class AdminControllerTest {
 
