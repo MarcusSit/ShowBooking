@@ -4,13 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ShowBookingControllerTest {
+class BuyerControllerTest {
 
     @Test
-    void flow() {
-    }
-
-    @Test
-    void validateRole() {
+    void flowForBuyer() {
     }
 }

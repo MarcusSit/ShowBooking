@@ -3,6 +3,8 @@ package com.example.demo.Utils;
 import lombok.extern.slf4j.Slf4j;
 
 import java.sql.Timestamp;
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -60,6 +62,8 @@ public class BookingUtils {
     }
 
     public long calculateDifferenceInTime(Timestamp bookingTime, Timestamp cancellationTime) {
-        return bookingTime.getTime() - cancellationTime.getTime();
+        LocalDateTime bookingTimeInLocalDateTime = bookingTime.toLocalDateTime();
+        LocalDateTime cancellationTimeInLocalDateTime = cancellationTime.toLocalDateTime();
+        return Duration.between(bookingTimeInLocalDateTime, cancellationTimeInLocalDateTime).toMinutes();
     }
 }

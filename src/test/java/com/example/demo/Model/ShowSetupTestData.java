@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowSetupTest {
+public class ShowSetupTestData {
 
 
     public ShowSetup getShowSetupTestDataForSetup(long bookingId) {
@@ -43,5 +43,24 @@ public class ShowSetupTest {
             }
         }
         return showSetups;
+    }
+
+    public List<ShowSetup> getShowSetupListTestDataWithBookingId() {
+        var list = getShowSetupListTestDataForSetup();
+        List<ShowSetup> updatedList = new ArrayList<>();
+        for (int i = 0; i < list.size();i++){
+            var model = list.get(i);
+            model.setBookingId((long) i+1);
+            updatedList.add(model);
+        }
+        return updatedList;
+    }
+
+    public ShowSetup getShowSetupTestDataWithBookedTickets(long bookingId,String phoneNumber) {
+        var model = getShowSetupTestDataForSetup(bookingId);
+        model.setAvailability("Booked");
+        model.setPhoneNumber(phoneNumber);
+        model.setBookingTime(Timestamp.valueOf(LocalDateTime.now()));
+        return model;
     }
 }
